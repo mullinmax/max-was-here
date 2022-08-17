@@ -1,569 +1,577 @@
-<style>
-    *,
-    ::after,
-    ::before {
-        box-sizing: border-box;
-        border: 0px solid rgb(226, 232, 240);
-    }
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <style>
+            *,
+            ::after,
+            ::before {
+                box-sizing: border-box;
+                border: 0px solid rgb(226, 232, 240);
+            }
 
-    * {}
+            * {}
 
-    .shadow-2xl {
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    }
+            .shadow-2xl {
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            }
 
-    .break-words {
-        overflow-wrap: break-word;
-    }
+            .break-words {
+                overflow-wrap: break-word;
+            }
 
-    .grid {
-        display: grid;
-    }
+            .grid {
+                display: grid;
+            }
 
-    .grid-cols-12 {
-        grid-template-columns: repeat(12, minmax(0px, 1fr));
-    }
+            .grid-cols-12 {
+                grid-template-columns: repeat(12, minmax(0px, 1fr));
+            }
 
-    .ml-8 {
-        margin-left: 2rem;
-    }
+            .ml-8 {
+                margin-left: 2rem;
+            }
 
-    .pb-8 {
-        padding-bottom: 2rem;
-    }
+            .pb-8 {
+                padding-bottom: 2rem;
+            }
 
-    .text-center {
-        text-align: center;
-    }
+            .text-center {
+                text-align: center;
+            }
 
-    .z-10 {
-        z-index: 10;
-    }
+            .z-10 {
+                z-index: 10;
+            }
 
-    .col-span-4 {
-        grid-column: span 4 / span 4;
-    }
+            .col-span-4 {
+                grid-column: span 4 / span 4;
+            }
 
-    .relative {
-        position: relative;
-    }
+            .relative {
+                position: relative;
+            }
 
-    .z-40 {
-        z-index: 40;
-    }
+            .z-40 {
+                z-index: 40;
+            }
 
-    img {
-        border-style: none;
-    }
+            img {
+                border-style: none;
+            }
 
-    img {
-        border-style: solid;
-    }
+            img {
+                border-style: solid;
+            }
 
-    canvas,
-    img,
-    video {
-        display: block;
-        vertical-align: middle;
-    }
+            canvas,
+            img,
+            video {
+                display: block;
+                vertical-align: middle;
+            }
 
-    img,
-    video {
-        max-width: 100%;
-        height: auto;
-    }
+            img,
+            video {
+                max-width: 100%;
+                height: auto;
+            }
 
-    .object-cover {
-        object-fit: cover;
-    }
+            .object-cover {
+                object-fit: cover;
+            }
 
-    .object-center {
-        object-position: center center;
-    }
+            .object-center {
+                object-position: center center;
+            }
 
-    .w-full {
-        width: 100%;
-    }
+            .w-full {
+                width: 100%;
+            }
 
-    .mb-6 {
-        margin-bottom: 1.5rem;
-    }
+            .mb-6 {
+                margin-bottom: 1.5rem;
+            }
 
-    h1,
-    h2,
-    h5,
-    h6,
-    hr,
-    p {
-        margin: 0px;
-    }
+            h1,
+            h2,
+            h5,
+            h6,
+            hr,
+            p {
+                margin: 0px;
+            }
 
-    h1,
-    h2,
-    h5,
-    h6 {
-        font-size: inherit;
-        font-weight: inherit;
-    }
+            h1,
+            h2,
+            h5,
+            h6 {
+                font-size: inherit;
+                font-weight: inherit;
+            }
 
-    .border-gray-800 {
-        --border-opacity: 1;
-        border-color: rgba(45, 55, 72, var(--border-opacity));
-    }
+            .border-gray-800 {
+                --border-opacity: 1;
+                border-color: rgba(45, 55, 72, var(--border-opacity));
+            }
 
-    .border-b-2 {
-        border-bottom-width: 2px;
-    }
+            .border-b-2 {
+                border-bottom-width: 2px;
+            }
 
-    .font-semibold {
-        font-weight: 600;
-    }
+            .font-semibold {
+                font-weight: 600;
+            }
 
-    .my-2 {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
+            .my-2 {
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
 
-    .mx-auto {
-        margin-left: auto;
-        margin-right: auto;
-    }
+            .mx-auto {
+                margin-left: auto;
+                margin-right: auto;
+            }
 
-    .mt-8 {
-        margin-top: 2rem;
-    }
+            .mt-8 {
+                margin-top: 2rem;
+            }
 
-    .pb-1 {
-        padding-bottom: 0.25rem;
-    }
+            .pb-1 {
+                padding-bottom: 0.25rem;
+            }
 
-    .uppercase {
-        text-transform: uppercase;
-    }
+            .uppercase {
+                text-transform: uppercase;
+            }
 
-    .tracking-wider {
-        letter-spacing: 0.05em;
-    }
+            .tracking-wider {
+                letter-spacing: 0.05em;
+            }
 
-    .w-3\/4 {
-        width: 75%;
-    }
+            .w-3\/4 {
+                width: 75%;
+            }
 
-    .mb-3 {
-        margin-bottom: 0.75rem;
-    }
+            .mb-3 {
+                margin-bottom: 0.75rem;
+            }
 
-    .font-bold {
-        font-weight: 700;
-    }
+            .font-bold {
+                font-weight: 700;
+            }
 
-    .text-xs {
-        font-size: 0.75rem;
-    }
+            .text-xs {
+                font-size: 0.75rem;
+            }
 
-    .text-sm {
-        font-size: 0.875rem;
-    }
+            .text-sm {
+                font-size: 0.875rem;
+            }
 
-    ol,
-    ul {
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
-    }
+            ol,
+            ul {
+                list-style: none;
+                margin: 0px;
+                padding: 0px;
+            }
 
-    .list-none {
-        list-style-type: none;
-    }
+            .list-none {
+                list-style-type: none;
+            }
 
-    .my-3 {
-        margin-top: 0.75rem;
-        margin-bottom: 0.75rem;
-    }
+            .my-3 {
+                margin-top: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
 
-    .col-span-8 {
-        grid-column: span 8 / span 8;
-    }
+            .col-span-8 {
+                grid-column: span 8 / span 8;
+            }
 
-    .ml-6 {
-        margin-left: 1.5rem;
-    }
+            .ml-6 {
+                margin-left: 1.5rem;
+            }
 
-    h1 {
-        font-size: 2em;
-        margin: 0.67em 0px;
-    }
+            h1 {
+                font-size: 2em;
+                margin: 0.67em 0px;
+            }
 
-    .tracking-wide {
-        letter-spacing: 0.025em;
-    }
+            .tracking-wide {
+                letter-spacing: 0.025em;
+            }
 
-    .text-lg {
-        font-size: 1.125rem;
-    }
+            .text-lg {
+                font-size: 1.125rem;
+            }
 
-    .py-4 {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
+            .py-4 {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
 
-    .mr-10 {
-        margin-right: 2.5rem;
-    }
+            .mr-10 {
+                margin-right: 2.5rem;
+            }
 
-    .text-gray-800 {
-        --text-opacity: 1;
-        color: rgba(45, 55, 72, var(--text-opacity));
-    }
+            .text-gray-800 {
+                --text-opacity: 1;
+                color: rgba(45, 55, 72, var(--text-opacity));
+            }
 
-    .mt-2 {
-        margin-top: 0.5rem;
-    }
+            .mt-2 {
+                margin-top: 0.5rem;
+            }
 
-    ul:not(.list-none) li::before {
-        content: "●";
-        padding-right: 6px;
-    }
+            ul:not(.list-none) li::before {
+                content: "●";
+                padding-right: 6px;
+            }
 
-    a {
-        background-color: transparent;
-    }
+            a {
+                background-color: transparent;
+            }
 
-    a {
-        color: inherit;
-        text-decoration: inherit;
-    }
+            a {
+                color: inherit;
+                text-decoration: inherit;
+            }
 
-    .col-gap-4 {
-        column-gap: 1rem;
-    }
+            .col-gap-4 {
+                column-gap: 1rem;
+            }
 
-    .row-gap-2 {
-        row-gap: 0.5rem;
-    }
+            .row-gap-2 {
+                row-gap: 0.5rem;
+            }
 
-    .grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0px, 1fr));
-    }
+            .grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0px, 1fr));
+            }
 
-    .flex {
-        display: flex;
-    }
+            .flex {
+                display: flex;
+            }
 
-    .flex-col {
-        flex-direction: column;
-    }
+            .flex-col {
+                flex-direction: column;
+            }
 
-    @media screen {
-        #page {
-            width: 21cm;
-            min-height: 29.7cm;
-            background-color: rgb(255, 255, 255);
-        }
-    }
+            @media screen {
+                #page {
+                    width: 21cm;
+                    min-height: 29.7cm;
+                    background-color: rgb(255, 255, 255);
+                }
+            }
 
-</style>
-
-<div
-    style="display: inline-block; transform-origin: 0px 0px 0px; transform: matrix(0.699695, 0, 0, 0.699695, 119.07, 168.377); transition: all 0.1s linear 0s; will-change: transform;">
-    <div id="page" class="shadow-2xl break-words">
-        <div style="background-color: rgb(255, 255, 255); color: rgb(33, 33, 33); font-family: Montserrat;">
-            <div class="grid grid-cols-12">
-                <div class="sidebar col-span-4 pb-8 ml-8 z-10 text-center"
-                    style="background-color: rgba(3, 169, 244, 0.1);">
-                    <div class="relative z-40"><img class="w-full object-cover object-center"
-                            src="https://media-exp1.licdn.com/dms/image/C4E03AQGGbPJ0HrLpbA/profile-displayphoto-shrink_800_800/0/1625001136809?e=1661385600&amp;v=beta&amp;t=EPD4M3jrP5JaC-ZpbE_bOGr3wb9StLNSNFd7IHXBF8g"
-                            alt="Resume Photograph" style="height: 160px;"></div>
-                    <div class="mb-6">
-                        <h5
-                            class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 mt-8 w-3/4 mx-auto">
-                            Contact</h5>
-                        <div class="mb-3">
-                            <h6 class="text-xs font-bold">Address</h6>
-                            <p class="text-sm">179 Garfield Ave</p>
-                            <p class="text-sm"></p>
-                            <p class="text-sm">Cincinnati, Ohio</p>
-                        </div>
-                        <div class="mb-3">
-                            <h6 class="text-xs font-bold">Phone</h6>
-                            <p class="text-sm">937.768.8185</p>
-                        </div>
-                        <div class="mb-3">
-                            <h6 class="text-xs font-bold">Email Address</h6>
-                            <p class="text-sm">inbox@max-was-here.com</p>
-                        </div>
-                        <div class="mb-3">
-                            <h6 class="text-xs font-bold">Website</h6>
-                            <p class="text-sm">max-was-here.com</p>
-                        </div>
-                    </div>
-                    <div class="mb-6">
-                        <h5
-                            class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 w-3/4 mx-auto">
-                            Skills</h5>
-                        <ul class="list-none text-sm">
-                            <li class="my-2">CI / CD</li>
-                            <li class="my-2">Git &amp; GitHub</li>
-                            <li class="my-2">Linux</li>
-                            <li class="my-2">SQL Database Design</li>
-                            <li class="my-2">Production Automation</li>
-                            <li class="my-2">Docker</li>
-                            <li class="my-2">Microsoft Azure &amp; Related Services</li>
-                            <li class="my-2">Project Management</li>
-                            <li class="my-2">Stakeholder Management</li>
-                            <li class="my-2">Web Design</li>
-                            <li class="my-2">Tableau &amp; Power BI</li>
-                        </ul>
-                    </div>
-                    <div class="mb-6">
-                        <h5
-                            class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 w-3/4 mx-auto">
-                            Hobbies</h5>
-                        <ul class="list-none text-sm">
-                            <li class="my-2">Self Hosted Webservices</li>
-                            <li class="my-2">Dungeons and Dragons</li>
-                            <li class="my-2">Mechanical Keyboards</li>
-                            <li class="my-2">3D modeling &amp; printing</li>
-                            <li class="my-2">Home Automation</li>
-                            <li class="my-2">Wood Working</li>
-                            <li class="my-2">Used Enterprise Servers</li>
-                            <li class="my-2">Guitar/Piano/Drums</li>
-                        </ul>
-                    </div>
-                    <div class="mb-6">
-                        <h5
-                            class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 w-3/4 mx-auto">
-                            Programming Languages</h5>
-                        <div class="my-3">
-                            <h6 class="text-xs font-bold">Python</h6>
-                            <div class="text-sm">5 years. Pandas, Numpy, pyodbc, pytest, flask</div>
-                        </div>
-                        <div class="my-3">
-                            <h6 class="text-xs font-bold">SQL</h6>
-                            <div class="text-sm">5 years. Oracle and Microsoft SQL Server</div>
-                        </div>
-                        <div class="my-3">
-                            <h6 class="text-xs font-bold">HTML + CSS + JS</h6>
-                            <div class="text-sm">5 years. checkout creepboards.com</div>
-                        </div>
-                        <div class="my-3">
-                            <h6 class="text-xs font-bold">H2H</h6>
-                            <div class="text-sm">Original Creator https://github.com/mullinmax/H2H</div>
-                        </div>
-                        <div class="my-3">
-                            <h6 class="text-xs font-bold">BASH</h6>
-                            <div class="text-sm">6 years</div>
-                        </div>
-                        <div class="my-3">
-                            <h6 class="text-xs font-bold">C++</h6>
-                            <div class="text-sm"> 4 years; embedded systems &amp; H2H implementation</div>
-                        </div>
-                        <div class="my-3">
-                            <h6 class="text-xs font-bold">C</h6>
-                            <div class="text-sm"> 4 Years; embedded systems</div>
-                        </div>
-                        <div class="my-3">
-                            <h6 class="text-xs font-bold">R</h6>
-                            <div class="text-sm"> 2 years; Tidy Verse</div>
-                        </div>
-                        <div class="my-3">
-                            <h6 class="text-xs font-bold">Ocaml</h6>
-                            <div class="text-sm"> 1 year</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-8">
-                    <header
-                        style="position: absolute; left: 0px; right: 0px; z-index: 0; display: flex; flex-direction: column; justify-content: center; align-items: start; color: white; background-color: rgb(34, 34, 34); height: 160px; padding-left: 270px;">
-                        <div class="ml-6">
-                            <h1 class="tracking-wide uppercase font-semibold" style="font-size: 2.75em;">Maxwell Mullin
-                            </h1>
-                            <h6 class="text-lg tracking-wider uppercase">Farm-Boy Turned Technocrat</h6>
-                        </div>
-                    </header>
-                    <section class="py-4" style="margin-top: 167px; margin-left: 20px;">
-                        <div class="mb-6">
-                            <h5
-                                class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 undefined">
-                                Work Experience</h5>
-                            <div class="my-3 mr-10">
-                                <div>
-                                    <h6 class="font-semibold">Tenneco - DRiV</h6>
-                                    <p class="text-xs text-gray-800">Azure Data Developer - Category Management | August
-                                        2021 - August 2022</p>
+        </style>
+    </head>
+    <body>
+        <div
+            style="display: inline-block; transform-origin: 0px 0px 0px; transform: matrix(0.699695, 0, 0, 0.699695, 119.07, 168.377); transition: all 0.1s linear 0s; will-change: transform;">
+            <div id="page" class="shadow-2xl break-words">
+                <div style="background-color: rgb(255, 255, 255); color: rgb(33, 33, 33); font-family: Montserrat;">
+                    <div class="grid grid-cols-12">
+                        <div class="sidebar col-span-4 pb-8 ml-8 z-10 text-center"
+                            style="background-color: rgba(3, 169, 244, 0.1);">
+                            <div class="relative z-40"><img class="w-full object-cover object-center"
+                                    src="https://media-exp1.licdn.com/dms/image/C4E03AQGGbPJ0HrLpbA/profile-displayphoto-shrink_800_800/0/1625001136809?e=1661385600&amp;v=beta&amp;t=EPD4M3jrP5JaC-ZpbE_bOGr3wb9StLNSNFd7IHXBF8g"
+                                    alt="Resume Photograph" style="height: 160px;"></div>
+                            <div class="mb-6">
+                                <h5
+                                    class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 mt-8 w-3/4 mx-auto">
+                                    Contact</h5>
+                                <div class="mb-3">
+                                    <h6 class="text-xs font-bold">Address</h6>
+                                    <p class="text-sm">179 Garfield Ave</p>
+                                    <p class="text-sm"></p>
+                                    <p class="text-sm">Cincinnati, Ohio</p>
                                 </div>
-                                <div class="mt-2 text-sm">
-                                    <ul>
-                                        <li>Maintaining and debugging existing azure storage accounts/containers, data
-                                            pipelines, database, data warehouse. </li>
-                                        <li>Developing "next gen" pipelines to reduce cost, development time &amp; error
-                                            rate. Using Python (pyodbc, pandas, Azure + SQL</li>
-                                        <li>Transitioning legacy pipelines to new format with minimal downtime</li>
-                                        <li>Formalizing team development process (Azure Devops)</li>
-                                    </ul>
+                                <div class="mb-3">
+                                    <h6 class="text-xs font-bold">Phone</h6>
+                                    <p class="text-sm">937.768.8185</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h6 class="text-xs font-bold">Email Address</h6>
+                                    <p class="text-sm">inbox@max-was-here.com</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h6 class="text-xs font-bold">Website</h6>
+                                    <p class="text-sm">max-was-here.com</p>
                                 </div>
                             </div>
-                            <div class="my-3 mr-10">
-                                <div>
-                                    <h6 class="font-semibold">84.51° - Kroger Precision Marketing</h6>
-                                    <p class="text-xs text-gray-800">Senior Data Scientist - P&amp;LS Product Partners |
-                                        June 2018 - August 2021</p>
-                                </div>
-                                <div class="mt-2 text-sm">
-                                    <ul>
-                                        <li>Wrote/maintained/scaled Python data pipeline to annually produce ~10B rows
-                                            of data across ~7K files with various formats and specifications.</li>
-                                        <li>Internal reporting and marketing tool support/development</li>
-                                        <li>Understanding needs of stakeholders and developing automated solutions</li>
-                                        <li>Coordinating process changes with partners at Kroger, Inmar, &amp; Liveramp
-                                        </li>
-                                        <li>Developed and ran technical training sessions for team and for broader
-                                            company</li>
-                                    </ul>
-                                </div>
+                            <div class="mb-6">
+                                <h5
+                                    class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 w-3/4 mx-auto">
+                                    Skills</h5>
+                                <ul class="list-none text-sm">
+                                    <li class="my-2">CI / CD</li>
+                                    <li class="my-2">Git &amp; GitHub</li>
+                                    <li class="my-2">Linux</li>
+                                    <li class="my-2">SQL Database Design</li>
+                                    <li class="my-2">Production Automation</li>
+                                    <li class="my-2">Docker</li>
+                                    <li class="my-2">Microsoft Azure &amp; Related Services</li>
+                                    <li class="my-2">Project Management</li>
+                                    <li class="my-2">Stakeholder Management</li>
+                                    <li class="my-2">Web Design</li>
+                                    <li class="my-2">Tableau &amp; Power BI</li>
+                                </ul>
                             </div>
-                            <div class="my-3 mr-10">
-                                <div>
-                                    <h6 class="font-semibold">84.51° - Kroger Precision Marketing</h6>
-                                    <p class="text-xs text-gray-800">Data Engineer Intern | June 2017 - August 2018</p>
-                                </div>
-                                <div class="mt-2 text-sm">
-                                    <p>Worked in team to develop an internal tool for processing files from partners</p>
-                                </div>
+                            <div class="mb-6">
+                                <h5
+                                    class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 w-3/4 mx-auto">
+                                    Hobbies</h5>
+                                <ul class="list-none text-sm">
+                                    <li class="my-2">Self Hosted Webservices</li>
+                                    <li class="my-2">Dungeons and Dragons</li>
+                                    <li class="my-2">Mechanical Keyboards</li>
+                                    <li class="my-2">3D modeling &amp; printing</li>
+                                    <li class="my-2">Home Automation</li>
+                                    <li class="my-2">Wood Working</li>
+                                    <li class="my-2">Used Enterprise Servers</li>
+                                    <li class="my-2">Guitar/Piano/Drums</li>
+                                </ul>
                             </div>
-                            <div class="my-3 mr-10">
-                                <div>
-                                    <h6 class="font-semibold">Ohio University</h6>
-                                    <p class="text-xs text-gray-800">Research developer | August 2016 - May 2018</p>
+                            <div class="mb-6">
+                                <h5
+                                    class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 w-3/4 mx-auto">
+                                    Programming Languages</h5>
+                                <div class="my-3">
+                                    <h6 class="text-xs font-bold">Python</h6>
+                                    <div class="text-sm">5 years. Pandas, Numpy, pyodbc, pytest, flask</div>
                                 </div>
-                                <div class="mt-2 text-sm">
-                                    <p>Assembled PCBs, identified and analyzed design flaws, and developed control
-                                        software(C++)</p>
+                                <div class="my-3">
+                                    <h6 class="text-xs font-bold">SQL</h6>
+                                    <div class="text-sm">5 years. Oracle and Microsoft SQL Server</div>
                                 </div>
-                            </div>
-                            <div class="my-3 mr-10">
-                                <div>
-                                    <h6 class="font-semibold">84.51° - Kroger Precision Marketing</h6>
-                                    <p class="text-xs text-gray-800">Data Scientist Intern | June 2016 - August 2016</p>
+                                <div class="my-3">
+                                    <h6 class="text-xs font-bold">HTML + CSS + JS</h6>
+                                    <div class="text-sm">5 years. checkout creepboards.com</div>
                                 </div>
-                                <div class="mt-2 text-sm">
-                                    <p>Designed &amp; executed plan for data science community to adopt Git &amp; GitHub
-                                    </p>
+                                <div class="my-3">
+                                    <h6 class="text-xs font-bold">H2H</h6>
+                                    <div class="text-sm">Original Creator https://github.com/mullinmax/H2H</div>
                                 </div>
-                            </div>
-                            <div class="my-3 mr-10">
-                                <div>
-                                    <h6 class="font-semibold">Ohio University</h6>
-                                    <p class="text-xs text-gray-800">Computer Science Teaching Assistant | August 2015 -
-                                        March 2016</p>
+                                <div class="my-3">
+                                    <h6 class="text-xs font-bold">BASH</h6>
+                                    <div class="text-sm">6 years</div>
                                 </div>
-                                <div class="mt-2 text-sm">
-                                    <p>Ran labs, held office hours, graded assignments/quizzes/exams</p>
+                                <div class="my-3">
+                                    <h6 class="text-xs font-bold">C++</h6>
+                                    <div class="text-sm"> 4 years; embedded systems &amp; H2H implementation</div>
+                                </div>
+                                <div class="my-3">
+                                    <h6 class="text-xs font-bold">C</h6>
+                                    <div class="text-sm"> 4 Years; embedded systems</div>
+                                </div>
+                                <div class="my-3">
+                                    <h6 class="text-xs font-bold">R</h6>
+                                    <div class="text-sm"> 2 years; Tidy Verse</div>
+                                </div>
+                                <div class="my-3">
+                                    <h6 class="text-xs font-bold">Ocaml</h6>
+                                    <div class="text-sm"> 1 year</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-6">
-                            <h5
-                                class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 undefined">
-                                Education</h5>
-                            <div class="my-3 mr-10">
-                                <h6 class="font-semibold">Ohio University Bachelors Degree</h6>
-                                <p class="text-xs">Computer Science</p>
-                                <div class="text-xs">August 2014 - May 2018</div>
-                                <div class="mt-2 text-sm">
-                                    <ul>
-                                        <li>Published bioinformatics research paper: </li>
-                                    </ul>
-                                    <p><a
-                                            href="https://www.mdpi.com/2223-7747/9/12/1751">https://www.mdpi.com/2223-7747/9/12/1751</a>
-                                    </p>
+                        <div class="col-span-8">
+                            <header
+                                style="position: absolute; left: 0px; right: 0px; z-index: 0; display: flex; flex-direction: column; justify-content: center; align-items: start; color: white; background-color: rgb(34, 34, 34); height: 160px; padding-left: 270px;">
+                                <div class="ml-6">
+                                    <h1 class="tracking-wide uppercase font-semibold" style="font-size: 2.75em;">Maxwell Mullin
+                                    </h1>
+                                    <h6 class="text-lg tracking-wider uppercase">Farm-Boy Turned Technocrat</h6>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="mb-6">
-                            <h5
-                                class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 undefined">
-                                Projects</h5>
-                            <div class="my-2">
-                                <h6 class="font-semibold">H2H programming language</h6>
-                                <p class="text-xs">https://github.com/mullinmax/H2H</p>
-                                <div class="mt-2 text-sm">
-                                    <p>Symbolic programming language with slightly more abstraction allowing for
-                                        multi-headed Turing machines. Intended for code golf &amp; self-modifying
-                                        programs</p>
-                                </div>
-                            </div>
-                            <div class="my-2">
-                                <h6 class="font-semibold">Technical Theater Director</h6>
-                                <p class="text-xs"></p>
-                                <div class="mt-2 text-sm">
-                                    <ul>
-                                        <li>Directed light and sound teams for seven different theatrical productions
-                                        </li>
-                                        <li>Managed ~15 people during set-construction, rehearsals, and performances
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="my-2">
-                                <h6 class="font-semibold">Yellow Springs Computer Club Founder &amp; President</h6>
-                                <p class="text-xs"></p>
-                                <div class="mt-2 text-sm">
-                                    <ul>
-                                        <li>Taught course material to students to fill a teaching gap at my high school
-                                        </li>
-                                        <li>Led group in designing a simulated primitive computer from virtual logic
-                                            gates</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-6">
-                            <h5
-                                class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 undefined">
-                                References</h5>
-                            <div class="grid grid-cols-2 col-gap-4 row-gap-2">
-                                <div class="flex flex-col">
-                                    <h6 class="text-sm font-semibold">Tyler Reagan</h6><span
-                                        class="text-sm"></span><span class="text-sm">973.820.6246</span><span
-                                        class="text-sm">treagan@alumni.nd.edu</span>
-                                    <div class="mt-2 text-sm">
-                                        <p>Data Developer</p>
-                                        <p>84.51°</p>
+                            </header>
+                            <section class="py-4" style="margin-top: 167px; margin-left: 20px;">
+                                <div class="mb-6">
+                                    <h5
+                                        class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 undefined">
+                                        Work Experience</h5>
+                                    <div class="my-3 mr-10">
+                                        <div>
+                                            <h6 class="font-semibold">Tenneco - DRiV</h6>
+                                            <p class="text-xs text-gray-800">Azure Data Developer - Category Management | August
+                                                2021 - August 2022</p>
+                                        </div>
+                                        <div class="mt-2 text-sm">
+                                            <ul>
+                                                <li>Maintaining and debugging existing azure storage accounts/containers, data
+                                                    pipelines, database, data warehouse. </li>
+                                                <li>Developing "next gen" pipelines to reduce cost, development time &amp; error
+                                                    rate. Using Python (pyodbc, pandas, Azure + SQL</li>
+                                                <li>Transitioning legacy pipelines to new format with minimal downtime</li>
+                                                <li>Formalizing team development process (Azure Devops)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="my-3 mr-10">
+                                        <div>
+                                            <h6 class="font-semibold">84.51° - Kroger Precision Marketing</h6>
+                                            <p class="text-xs text-gray-800">Senior Data Scientist - P&amp;LS Product Partners |
+                                                June 2018 - August 2021</p>
+                                        </div>
+                                        <div class="mt-2 text-sm">
+                                            <ul>
+                                                <li>Wrote/maintained/scaled Python data pipeline to annually produce ~10B rows
+                                                    of data across ~7K files with various formats and specifications.</li>
+                                                <li>Internal reporting and marketing tool support/development</li>
+                                                <li>Understanding needs of stakeholders and developing automated solutions</li>
+                                                <li>Coordinating process changes with partners at Kroger, Inmar, &amp; Liveramp
+                                                </li>
+                                                <li>Developed and ran technical training sessions for team and for broader
+                                                    company</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="my-3 mr-10">
+                                        <div>
+                                            <h6 class="font-semibold">84.51° - Kroger Precision Marketing</h6>
+                                            <p class="text-xs text-gray-800">Data Engineer Intern | June 2017 - August 2018</p>
+                                        </div>
+                                        <div class="mt-2 text-sm">
+                                            <p>Worked in team to develop an internal tool for processing files from partners</p>
+                                        </div>
+                                    </div>
+                                    <div class="my-3 mr-10">
+                                        <div>
+                                            <h6 class="font-semibold">Ohio University</h6>
+                                            <p class="text-xs text-gray-800">Research developer | August 2016 - May 2018</p>
+                                        </div>
+                                        <div class="mt-2 text-sm">
+                                            <p>Assembled PCBs, identified and analyzed design flaws, and developed control
+                                                software(C++)</p>
+                                        </div>
+                                    </div>
+                                    <div class="my-3 mr-10">
+                                        <div>
+                                            <h6 class="font-semibold">84.51° - Kroger Precision Marketing</h6>
+                                            <p class="text-xs text-gray-800">Data Scientist Intern | June 2016 - August 2016</p>
+                                        </div>
+                                        <div class="mt-2 text-sm">
+                                            <p>Designed &amp; executed plan for data science community to adopt Git &amp; GitHub
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="my-3 mr-10">
+                                        <div>
+                                            <h6 class="font-semibold">Ohio University</h6>
+                                            <p class="text-xs text-gray-800">Computer Science Teaching Assistant | August 2015 -
+                                                March 2016</p>
+                                        </div>
+                                        <div class="mt-2 text-sm">
+                                            <p>Ran labs, held office hours, graded assignments/quizzes/exams</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col">
-                                    <h6 class="text-sm font-semibold">Connor Hollenbach</h6><span
-                                        class="text-sm"></span><span class="text-sm">303.501.7520</span><span
-                                        class="text-sm">hollenbach256@gmail.com</span>
-                                    <div class="mt-2 text-sm">
-                                        <p>Software Engineer</p>
-                                        <p>Tableau Software</p>
+                                <div class="mb-6">
+                                    <h5
+                                        class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 undefined">
+                                        Education</h5>
+                                    <div class="my-3 mr-10">
+                                        <h6 class="font-semibold">Ohio University Bachelors Degree</h6>
+                                        <p class="text-xs">Computer Science</p>
+                                        <div class="text-xs">August 2014 - May 2018</div>
+                                        <div class="mt-2 text-sm">
+                                            <ul>
+                                                <li>Published bioinformatics research paper: </li>
+                                            </ul>
+                                            <p><a
+                                                    href="https://www.mdpi.com/2223-7747/9/12/1751">https://www.mdpi.com/2223-7747/9/12/1751</a>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col">
-                                    <h6 class="text-sm font-semibold">Aaron Robeson</h6><span
-                                        class="text-sm"></span><span class="text-sm">513.288.3134</span><span
-                                        class="text-sm">aaronrobeson@gmail.com</span>
-                                    <div class="mt-2 text-sm">
-                                        <p>Senior Data Scientist</p>
-                                        <p>84.51˚</p>
+                                <div class="mb-6">
+                                    <h5
+                                        class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 undefined">
+                                        Projects</h5>
+                                    <div class="my-2">
+                                        <h6 class="font-semibold">H2H programming language</h6>
+                                        <p class="text-xs">https://github.com/mullinmax/H2H</p>
+                                        <div class="mt-2 text-sm">
+                                            <p>Symbolic programming language with slightly more abstraction allowing for
+                                                multi-headed Turing machines. Intended for code golf &amp; self-modifying
+                                                programs</p>
+                                        </div>
+                                    </div>
+                                    <div class="my-2">
+                                        <h6 class="font-semibold">Technical Theater Director</h6>
+                                        <p class="text-xs"></p>
+                                        <div class="mt-2 text-sm">
+                                            <ul>
+                                                <li>Directed light and sound teams for seven different theatrical productions
+                                                </li>
+                                                <li>Managed ~15 people during set-construction, rehearsals, and performances
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="my-2">
+                                        <h6 class="font-semibold">Yellow Springs Computer Club Founder &amp; President</h6>
+                                        <p class="text-xs"></p>
+                                        <div class="mt-2 text-sm">
+                                            <ul>
+                                                <li>Taught course material to students to fill a teaching gap at my high school
+                                                </li>
+                                                <li>Led group in designing a simulated primitive computer from virtual logic
+                                                    gates</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col">
-                                    <h6 class="text-sm font-semibold">Parker Kain</h6><span class="text-sm">
-                                    </span><span class="text-sm">513.295.0010</span><span
-                                        class="text-sm">parkerjkain@gmail.com</span>
-                                    <div class="mt-2 text-sm">
-                                        <p>Senior Data Scientist</p>
-                                        <p>84.51˚</p>
+                                <div class="mb-6">
+                                    <h5
+                                        class="my-2 text-md uppercase font-semibold tracking-wider pb-1 border-b-2 border-gray-800 undefined">
+                                        References</h5>
+                                    <div class="grid grid-cols-2 col-gap-4 row-gap-2">
+                                        <div class="flex flex-col">
+                                            <h6 class="text-sm font-semibold">Tyler Reagan</h6><span
+                                                class="text-sm"></span><span class="text-sm">973.820.6246</span><span
+                                                class="text-sm">treagan@alumni.nd.edu</span>
+                                            <div class="mt-2 text-sm">
+                                                <p>Data Developer</p>
+                                                <p>84.51°</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <h6 class="text-sm font-semibold">Connor Hollenbach</h6><span
+                                                class="text-sm"></span><span class="text-sm">303.501.7520</span><span
+                                                class="text-sm">hollenbach256@gmail.com</span>
+                                            <div class="mt-2 text-sm">
+                                                <p>Software Engineer</p>
+                                                <p>Tableau Software</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <h6 class="text-sm font-semibold">Aaron Robeson</h6><span
+                                                class="text-sm"></span><span class="text-sm">513.288.3134</span><span
+                                                class="text-sm">aaronrobeson@gmail.com</span>
+                                            <div class="mt-2 text-sm">
+                                                <p>Senior Data Scientist</p>
+                                                <p>84.51˚</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <h6 class="text-sm font-semibold">Parker Kain</h6><span class="text-sm">
+                                            </span><span class="text-sm">513.295.0010</span><span
+                                                class="text-sm">parkerjkain@gmail.com</span>
+                                            <div class="mt-2 text-sm">
+                                                <p>Senior Data Scientist</p>
+                                                <p>84.51˚</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </section>
                         </div>
-                    </section>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </body>
+</html>
